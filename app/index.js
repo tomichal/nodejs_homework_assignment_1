@@ -1,13 +1,12 @@
 var http = require('http');
 var urlParser = require('url');
 var StringDecoder = require('string_decoder').StringDecoder;
-var config = require('./config');
 var fs = require('fs');
-
 var httpServer = http.createServer(function(req, res) { serverHandler(req, res) });
+const httpPort = 3000;
 
-httpServer.listen(config.httpPort, function () {
-  console.log(`Server started on port ${config.httpPort} in ${config.envName}.`);
+httpServer.listen(httpPort, function () {
+  console.log(`Server started on port ${httpPort}.`);
 });
 
 var serverHandler = function (req, res) {
